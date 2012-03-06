@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+  <Document>
+    <name>14 Springfield Terrace, Kelburn, Wellington 6012, New Zealand to 93 Kelburn Parade, Kelburn, Wellington 6012,
+      New Zealand
+    </name>
+    <Style id="roadStyle">
+      <LineStyle>
+        <color>7fcf0064</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Snippet>
+      <![CDATA[<font size=+1><a href="http://maps.google.com/maps?saddr=14+Springfield+Terrace,+Wellington,+New+Zealand&daddr=93+Kelburn+Parade,+Wellington,+New+Zealand&hl=en&sll=-41.29173,174.766286&sspn=0.002402,0.005284&geocode=FUf0if0dBbhqCilzWuoPL7A4bTFV1egrxqMRdg%3BFezuif0dVLZqCimXx-N4L7A4bTF_iRS3E0Losg&oq=93+Kel&mra=ls&t=m&z=19">Printable view</a></font>]]></Snippet>
+    <Placemark>
+      <name>Head south on Springfield Tce toward Kelburn Parade</name>
+      <description><![CDATA[go 62&#160;m]]></description>
+      <address>14 Springfield Terrace, Kelburn, Wellington 6012, New Zealand</address>
+      <StyleMap>
+        <Pair>
+          <key>normal</key>
+          <Style>
+            <IconStyle>
+              <Icon>
+                <href>http://maps.gstatic.com/intl/en_ALL/mapfiles/kml/paddle/go.png</href>
+              </Icon>
+              <hotSpot x="0.500000" y="0.000000" xunits="fraction" yunits="fraction"/>
+            </IconStyle>
+            <ListStyle>
+              <ItemIcon>
+                <href>http://maps.gstatic.com/intl/en_ALL/mapfiles/kml/paddle/go-lv.png</href>
+              </ItemIcon>
+            </ListStyle>
+          </Style>
+        </Pair>
+        <Pair>
+          <key>highlight</key>
+          <Style>
+            <IconStyle>
+              <scale>1.300000</scale>
+              <Icon>
+                <href>http://maps.gstatic.com/intl/en_ALL/mapfiles/kml/paddle/go.png</href>
+              </Icon>
+              <hotSpot x="0.500000" y="0.000000" xunits="fraction" yunits="fraction"/>
+            </IconStyle>
+            <ListStyle>
+              <ItemIcon>
+                <href>http://maps.gstatic.com/intl/en_ALL/mapfiles/kml/paddle/go-lv.png</href>
+              </ItemIcon>
+            </ListStyle>
+          </Style>
+        </Pair>
+      </StyleMap>
+      <Point>
+        <coordinates>174.765520,-41.290770,0</coordinates>
+      </Point>
+      <LookAt>
+        <longitude>174.765520</longitude>
+        <latitude>-41.290770</latitude>
+        <range>100.000000</range>
+        <tilt>45.000000</tilt>
+        <heading>169.974136</heading>
+      </LookAt>
+    </Placemark>
+    <Placemark>
+      <name>Turn left onto Kelburn Parade Destination will be on the right</name>
+      <description><![CDATA[go 70&#160;m]]></description>
+      <StyleMap>
+        <Pair>
+          <key>normal</key>
+          <Style>
+            <IconStyle>
+              <Icon>
+                <href>http://maps.gstatic.com/intl/en_ALL/mapfiles/kml/paddle/pause.png</href>
+              </Icon>
+              <hotSpot x="0.500000" y="0.000000" xunits="fraction" yunits="fraction"/>
+            </IconStyle>
+            <ListStyle>
+              <ItemIcon>
+                <href>http://maps.gstatic.com/intl/en_ALL/mapfiles/kml/paddle/pause-lv.png</href>
+              </ItemIcon>
+            </ListStyle>
+          </Style>
+        </Pair>
+        <Pair>
+          <key>highlight</key>
+          <Style>
+            <IconStyle>
+              <scale>1.300000</scale>
+              <Icon>
+                <href>http://maps.gstatic.com/intl/en_ALL/mapfiles/kml/paddle/pause.png</href>
+              </Icon>
+              <hotSpot x="0.500000" y="0.000000" xunits="fraction" yunits="fraction"/>
+            </IconStyle>
+            <ListStyle>
+              <ItemIcon>
+                <href>http://maps.gstatic.com/intl/en_ALL/mapfiles/kml/paddle/pause-lv.png</href>
+              </ItemIcon>
+            </ListStyle>
+          </Style>
+        </Pair>
+      </StyleMap>
+      <Point>
+        <coordinates>174.765450,-41.291320,0</coordinates>
+      </Point>
+      <LookAt>
+        <longitude>174.765450</longitude>
+        <latitude>-41.291320</latitude>
+        <range>100.000000</range>
+        <tilt>45.000000</tilt>
+        <heading>192.270721</heading>
+      </LookAt>
+    </Placemark>
+    <Placemark>
+      <name>Arrive at: 93 Kelburn Parade, Kelburn, Wellington 6012, New Zealand</name>
+      <address>93 Kelburn Parade, Kelburn, Wellington 6012, New Zealand</address>
+      <StyleMap>
+        <Pair>
+          <key>normal</key>
+          <Style>
+            <IconStyle>
+              <Icon>
+                <href>http://maps.gstatic.com/intl/en_ALL/mapfiles/kml/paddle/stop.png</href>
+              </Icon>
+            </IconStyle>
+            <ListStyle>
+              <ItemIcon>
+                <href>http://maps.gstatic.com/intl/en_ALL/mapfiles/kml/paddle/stop-lv.png</href>
+              </ItemIcon>
+            </ListStyle>
+          </Style>
+        </Pair>
+        <Pair>
+          <key>highlight</key>
+          <Style>
+            <IconStyle>
+              <scale>1.300000</scale>
+              <Icon>
+                <href>http://maps.gstatic.com/intl/en_ALL/mapfiles/kml/paddle/stop.png</href>
+              </Icon>
+            </IconStyle>
+            <ListStyle>
+              <ItemIcon>
+                <href>http://maps.gstatic.com/intl/en_ALL/mapfiles/kml/paddle/stop-lv.png</href>
+              </ItemIcon>
+            </ListStyle>
+          </Style>
+        </Pair>
+      </StyleMap>
+      <Point>
+        <coordinates>174.765708,-41.291869,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Route</name>
+      <description>
+        <![CDATA[Distance: 130&#160;m (about 25 secs)<br/>Map data ©2012 Google, MapData Sciences Pty Ltd, PSMA, Whereis(R), Sensis Pty Ltd]]></description>
+      <GeometryCollection>
+        <LineString>
+          <coordinates>174.765520,-41.290770,0.000000 174.765560,-41.290940,0.000000 174.765450,-41.291320,0.000000
+            174.765450,-41.291320,0.000000 174.765570,-41.291430,0.000000 174.765600,-41.291790,0.000000
+            174.765710,-41.291870,0.000000
+          </coordinates>
+        </LineString>
+      </GeometryCollection>
+      <styleUrl>#roadStyle</styleUrl>
+    </Placemark>
+  </Document>
+</kml>

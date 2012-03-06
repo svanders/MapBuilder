@@ -1,0 +1,7 @@
+Kindle Touch Screen Size 600x800 pixels
+At a suitable zoom
+Top Right   = 55.688641,12.588873
+Bottom Left = 55.679181,12.559776
+
+Screen Width in coords  =  0.009460
+Screen Height in coords =  0.029097
