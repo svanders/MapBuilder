@@ -31,13 +31,17 @@ public class KmlParser extends DefaultHandler {
 
   private boolean inLine = false;
 
+  private final InputStream kml;
 
-  SAXParser saxParser;
 
-  public void parse(InputStream kml) {
+  public KmlParser(InputStream kml) {
+    this.kml = kml;
+  }
+
+  public void parse() {
     try {
       SAXParserFactory factory = SAXParserFactory.newInstance();
-      saxParser = factory.newSAXParser();
+      SAXParser saxParser = factory.newSAXParser();
       saxParser.parse(kml, this);
     }
     catch (Exception e) {

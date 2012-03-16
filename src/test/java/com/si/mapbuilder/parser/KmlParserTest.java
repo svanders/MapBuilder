@@ -22,7 +22,8 @@ public class KmlParserTest {
 
   @Before
   public void createParser() {
-    parser = new KmlParser();
+    InputStream kml = this.getClass().getResourceAsStream("/map.kml");
+    parser = new KmlParser(kml);
   }
 
   @Test
@@ -36,8 +37,8 @@ public class KmlParserTest {
     expected.addPoint(new Point(174.765600,-41.291790));
     expected.addPoint(new Point(174.765710,-41.291870));
 
-    InputStream kml = this.getClass().getResourceAsStream("/map.kml");
-    parser.parse(kml);
+
+    parser.parse();
     assertThat(parser.getLine()).isEqualTo(expected);
   }
 
