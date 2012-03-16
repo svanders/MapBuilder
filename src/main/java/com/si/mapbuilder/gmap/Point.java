@@ -1,11 +1,10 @@
 package com.si.mapbuilder.gmap;
 
 /**
- * Copyright meditrack 2011
+ *
  * User: simonvandersluis
  * Date: 6/03/12
  * Time: 6:54 PM
- * To change this template use File | Settings | File Templates.
  */
 public class Point {
 

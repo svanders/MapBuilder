@@ -5,11 +5,10 @@ import org.junit.Test;
 import static org.fest.assertions.Assertions.assertThat;
 
 /**
- * Copyright meditrack 2011
+ *
  * User: simonvandersluis
  * Date: 5/03/12
  * Time: 9:59 PM
- * To change this template use File | Settings | File Templates.
  */
 public class PolylineEncoderTest {
 

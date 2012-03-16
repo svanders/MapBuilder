@@ -8,11 +8,10 @@ import java.io.File;
 import static org.fest.assertions.Assertions.assertThat;
 
 /**
- * Copyright meditrack 2011
+ *
  * User: simonvandersluis
  * Date: 3/03/12
  * Time: 1:30 AM
- * To change this template use File | Settings | File Templates.
  */
 public class ImageFetcherTest {
 
