@@ -3,7 +3,7 @@ package com.si.mapbuilder.gmap;
 import java.util.Iterator;
 
 /**
- * Copyright meditrack 2011
+ *
  * User: simonvandersluis
  * Date: 5/03/12
  * Time: 9:56 PM

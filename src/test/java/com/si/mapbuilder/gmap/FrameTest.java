@@ -9,7 +9,6 @@ import static org.fest.assertions.Assertions.assertThat;
  * Tests the Frame class.
  * Date: 13/03/12
  * Time: 8:38 PM
- * To change this template use File | Settings | File Templates.
  */
 public class FrameTest {
 

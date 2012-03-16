@@ -10,11 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Copyright meditrack 2011
+ *
  * User: simonvandersluis
  * Date: 16/03/12
  * Time: 8:51 PM
- * To change this template use File | Settings | File Templates.
  */
 public class MapProcessor {
 

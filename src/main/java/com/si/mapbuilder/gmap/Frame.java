@@ -5,11 +5,10 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Copyright meditrack 2011
+ *
  * User: simonvandersluis
  * Date: 13/03/12
  * Time: 8:34 PM
- * To change this template use File | Settings | File Templates.
  */
 public class Frame {
 

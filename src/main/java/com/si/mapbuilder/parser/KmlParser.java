@@ -12,11 +12,10 @@ import java.io.InputStream;
 import java.util.Arrays;
 
 /**
- * Copyright meditrack 2011
+ *
  * User: simonvandersluis
  * Date: 3/03/12
  * Time: 1:04 AM
- * To change this template use File | Settings | File Templates.
  */
 public class KmlParser extends DefaultHandler {
 
@@ -24,7 +23,7 @@ public class KmlParser extends DefaultHandler {
 
   private static final String LINE_TAG = "linestring";
 
-  private Line line;
+  private CoordStringBuilder coords;
 
 
   private boolean inCoords = false;
@@ -52,7 +51,7 @@ public class KmlParser extends DefaultHandler {
 
   @Override
   public void startDocument() throws SAXException {
-    line = new Line();
+    coords = new CoordStringBuilder();
     inLine = false;
     inCoords = false;
   }
@@ -84,17 +83,18 @@ public class KmlParser extends DefaultHandler {
 
   public void characters(char ch[], int start, int length) throws SAXException {
     if (inLine && inCoords) {
-      String coords = new String(Arrays.copyOfRange(ch, start, start + length));
-      addPoints(coords);
+      String data = new String(Arrays.copyOfRange(ch, start, start + length));
+      coords.append(data);
     }
   }
 
-  private void addPoints(String coords) {
-    String[] splitCoords = coords.split(" ");
+  public Line getLine() {
+    Line line = new Line();
+    String[] splitCoords = coords.toString().split(" ");
     for (String coord : splitCoords)
     {
       coord = coord.trim();
-      if (!coord.isEmpty())
+      if (!coord.trim().isEmpty())
       {
         String[] xyz = coord.split(",");
         double x = Double.parseDouble(xyz[0]);
@@ -102,9 +102,15 @@ public class KmlParser extends DefaultHandler {
         line.addPoint(new Point(x, y));
       }
     }
-  }
-
-  public Line getLine() {
     return line;
   }
+//
+//  private String filterData(String data) {
+//    StringBuilder filtered = new StringBuilder();
+//    for (int i = 0; i < coords.length(); i++)
+//    {
+//
+//    }
+//  }
+    
 }
