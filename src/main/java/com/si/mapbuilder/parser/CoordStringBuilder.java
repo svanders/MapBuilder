@@ -16,21 +16,40 @@ public class CoordStringBuilder {
   private Pattern coordCharPattern = Pattern.compile("[0-9]|-|\\.");
 
   private TuplePos pos = TuplePos.FIRST;
+  
+  private int lastTupleDpCount = 0;
+  
+  private boolean pastLastTupleDp = false;
 
   public void append(String str) {
     try {
       StringReader reader = new StringReader(str.trim());
       int read = reader.read();
       while (read != -1) {
-        String c = new String(new char[] {(char) read});
-        if (coordCharPattern.matcher(c).matches())
-        {
+        String c = new String(new char[]{(char) read});
+        if (coordCharPattern.matcher(c).matches()) {
           coordString.append(c);
+          if (pos == TuplePos.THIRD && pastLastTupleDp) {
+            lastTupleDpCount++;
+          }
+          if (lastTupleDpCount == 6)
+          {
+            pos = pos.next();
+            pastLastTupleDp = false;
+            lastTupleDpCount = 0;
+            coordString.append(' ');
+          }
+          if (pos == TuplePos.THIRD && c.equals(".")) {
+            pastLastTupleDp = true;
+          }
+        }
+        if (c.equals(",")) {
+          coordString.append(c);
+          pos = pos.next();
         }
         read = reader.read();
       }
       reader.close();
-
     }
     catch (IOException e) {
       throw new RuntimeException("Unable to read String '" + str + "'", e);
@@ -38,12 +57,29 @@ public class CoordStringBuilder {
   }
 
   public String toString() {
-    return coordString.toString();
+    return coordString.toString().trim();
   }
 
   private enum TuplePos {
-    FIRST(),
-    SECOND(),
-    THIRD();
+    FIRST() {
+      @Override
+      public TuplePos next() {
+        return SECOND;
+      }
+    },
+    SECOND() {
+      @Override
+      public TuplePos next() {
+        return THIRD;
+      }
+    },
+    THIRD() {
+      @Override
+      public TuplePos next() {
+        return FIRST;
+      }
+    };
+
+    public abstract TuplePos next();
   }
 }
