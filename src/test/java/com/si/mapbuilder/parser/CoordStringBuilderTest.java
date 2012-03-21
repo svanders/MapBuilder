@@ -6,7 +6,6 @@ import org.junit.Test;
 import static org.fest.assertions.Assertions.assertThat;
 
 /**
- *
  * User: simonvandersluis
  * Date: 17/03/12
  * Time: 11:54 AM
@@ -33,10 +32,22 @@ public class CoordStringBuilderTest {
   public void individual() {
     builder.append("174.765520");
     builder.append(",-41.290770,");
-    builder.append("0.000000");
+    builder.append("0.000000\n");
     builder.append("174.765560,");
     builder.append("-41.290940,");
     builder.append("0.000000 ");
+    builder.append("174.765450,");
+    builder.append("-41.291320,");
+    builder.append("0.000000");
+
+    assertThat(builder.toString()).isEqualTo(EXPECTED);
+  }
+
+  @Test
+  public void mixed() {
+    builder.append("174.765520,-41.290770,\n");
+    builder.append("0.000000\n");
+    builder.append("174.765560,-41.290940,0.000000\n");
     builder.append("174.765450,");
     builder.append("-41.291320,");
     builder.append("0.000000");

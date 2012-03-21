@@ -41,7 +41,7 @@ public class KmlParserTest {
   }
 
   @Test
-  public void testSLineBreaks() {
+  public void testLineBreaks() {
     InputStream kml = this.getClass().getResourceAsStream("/lineBreaks.kml");
     KmlParser parser = new KmlParser(kml);
 

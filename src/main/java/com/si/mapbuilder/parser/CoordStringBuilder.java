@@ -16,36 +16,27 @@ public class CoordStringBuilder {
   private Pattern coordCharPattern = Pattern.compile("[0-9]|-|\\.");
 
   private TuplePos pos = TuplePos.FIRST;
-  
-  private int lastTupleDpCount = 0;
-  
-  private boolean pastLastTupleDp = false;
+
+  private boolean numberStarted = false;
 
   public void append(String str) {
     try {
-      StringReader reader = new StringReader(str.trim());
+      StringReader reader = new StringReader(str);
       int read = reader.read();
       while (read != -1) {
         String c = new String(new char[]{(char) read});
         if (coordCharPattern.matcher(c).matches()) {
           coordString.append(c);
-          if (pos == TuplePos.THIRD && pastLastTupleDp) {
-            lastTupleDpCount++;
-          }
-          if (lastTupleDpCount == 6)
-          {
-            pos = pos.next();
-            pastLastTupleDp = false;
-            lastTupleDpCount = 0;
-            coordString.append(' ');
-          }
-          if (pos == TuplePos.THIRD && c.equals(".")) {
-            pastLastTupleDp = true;
-          }
+          numberStarted = true;
         }
-        if (c.equals(",")) {
+        else if (pos == TuplePos.THIRD && numberStarted) {
+          pos = TuplePos.FIRST;
+          coordString.append(' ');
+        }
+        else if (c.equals(",")) {
           coordString.append(c);
           pos = pos.next();
+          numberStarted = false;
         }
         read = reader.read();
       }
@@ -59,6 +50,8 @@ public class CoordStringBuilder {
   public String toString() {
     return coordString.toString().trim();
   }
+  
+
 
   private enum TuplePos {
     FIRST() {

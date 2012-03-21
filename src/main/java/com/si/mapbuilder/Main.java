@@ -13,17 +13,17 @@ import java.io.InputStream;
 public class Main {
 
 
-  public static int main(String[] args) {
+  public static void main(String[] args) {
     try {
       File file = new File("/Users/simonvandersluis/Desktop/21kph/Routes.kml");
       InputStream is = new FileInputStream(file);
       MapProcessor processor = new MapProcessor(is);
       processor.process();
-      return 1;
+      System.exit(0);
     }
     catch (Exception e) {
       e.printStackTrace();
-      return 100;
+      System.exit(1);
     }
 
 

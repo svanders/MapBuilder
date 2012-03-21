@@ -104,13 +104,6 @@ public class KmlParser extends DefaultHandler {
     }
     return line;
   }
-//
-//  private String filterData(String data) {
-//    StringBuilder filtered = new StringBuilder();
-//    for (int i = 0; i < coords.length(); i++)
-//    {
-//
-//    }
-//  }
+
     
 }
