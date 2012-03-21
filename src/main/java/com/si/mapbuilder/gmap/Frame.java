@@ -101,6 +101,10 @@ public class Frame {
   public List<Point> getPoints() {
     return Collections.unmodifiableList(points);
   }
+  
+  public Line getLine() {
+    return new Line(points);
+  }
 
 
 }

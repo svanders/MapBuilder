@@ -12,6 +12,13 @@ public class Line {
   
   private List<Point> points = new LinkedList<Point>();
   
+  public Line() {
+    super();
+  }
+  
+  public Line(List<Point> initialPoints) {
+    this.points.addAll(initialPoints);
+  }
   
   public Iterator<Point> iterate() {
     return points.iterator();

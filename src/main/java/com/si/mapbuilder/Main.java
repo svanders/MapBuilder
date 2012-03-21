@@ -1,8 +1,12 @@
 package com.si.mapbuilder;
 
+import com.si.mapbuilder.gmap.Frame;
+import com.si.mapbuilder.gmap.ImageFetcher;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.net.URL;
 
 /**
  *
@@ -19,6 +23,11 @@ public class Main {
       InputStream is = new FileInputStream(file);
       MapProcessor processor = new MapProcessor(is);
       processor.process();
+      ImageFetcher fetcher = new ImageFetcher(600, 800, 1);
+      for (Frame frame : processor.getFrames()) {
+        URL url = fetcher.buildUrl(frame.getLine());
+        System.out.println(url.toString());
+      }
       System.exit(0);
     }
     catch (Exception e) {

@@ -38,8 +38,6 @@ public class PolylineEncoder {
       prev = at;
     }
 
-    
-    
     return encLine.toString();
   }
   

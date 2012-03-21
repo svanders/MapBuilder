@@ -7,6 +7,7 @@ import com.si.mapbuilder.parser.KmlParser;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -38,6 +39,10 @@ public class MapProcessor {
         frame.addPoint(p);
       }
     }
+  }
+
+  public List<Frame> getFrames() {
+    return Collections.unmodifiableList(frames);
   }
 
   private Frame newFrame() {

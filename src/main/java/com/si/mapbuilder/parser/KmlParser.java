@@ -97,8 +97,8 @@ public class KmlParser extends DefaultHandler {
       if (!coord.trim().isEmpty())
       {
         String[] xyz = coord.split(",");
-        double x = Double.parseDouble(xyz[0]);
-        double y =  Double.parseDouble(xyz[1]);
+        double x = Double.parseDouble(xyz[1]);
+        double y =  Double.parseDouble(xyz[0]);
         line.addPoint(new Point(x, y));
       }
     }

@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Date;
+import java.util.List;
 import java.util.StringTokenizer;
 
 /**
@@ -36,9 +37,9 @@ public class ImageFetcher {
     InputStream is = null;
     FileOutputStream fos = null;
     try {
-      URLConnection urlC = url.openConnection();
+      URLConnection urlCon = url.openConnection();
       is = url.openStream();
-      String conentType = urlC.getContentType();
+      String conentType = urlCon.getContentType();
       fos = new FileOutputStream(f);
       int redByte, count = 0;
       while ((redByte = is.read()) != -1) {
@@ -58,12 +59,26 @@ public class ImageFetcher {
   }
 
 
-  private URL buildUrl(double x, double y) {
+  public URL buildUrl(double x, double y) {
     try {
       StringBuilder url = new StringBuilder("http://maps.google.com/maps/api/staticmap");
       url.append("?center=").append(x).append(",").append(y);
       url.append("&zoom=").append(zoom);
       url.append("&size=").append(width).append("x").append(hieght);
+      url.append("&sensor=false");
+      return new URL(url.toString());
+    }
+    catch (MalformedURLException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public URL buildUrl(Line line) {
+    try {
+      StringBuilder url = new StringBuilder("http://maps.google.com/maps/api/staticmap");
+      url.append("?size=").append(width).append("x").append(hieght);
+      url.append("&path=weight:5%7Ccolor:0xff00ff%7Cenc:");
+      url.append(new PolylineEncoder().encodeLine(line));
       url.append("&sensor=false");
       return new URL(url.toString());
     }
