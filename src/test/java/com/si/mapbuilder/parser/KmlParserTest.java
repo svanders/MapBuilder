@@ -22,13 +22,13 @@ public class KmlParserTest {
   @Before
   public void createExpectedResult() {
     expected = new Line();
-    expected.addPoint(new Point(174.765520,-41.290770));
-    expected.addPoint(new Point(174.765560,-41.290940));
-    expected.addPoint(new Point(174.765450,-41.291320));
-    expected.addPoint(new Point(174.765450,-41.291320));
-    expected.addPoint(new Point(174.765570,-41.291430));
-    expected.addPoint(new Point(174.765600,-41.291790));
-    expected.addPoint(new Point(174.765710,-41.291870));
+    expected.addPoint(new Point(-41.290770, 174.765520));
+    expected.addPoint(new Point(-41.290940, 174.765560));
+    expected.addPoint(new Point(-41.291320, 174.765450));
+    expected.addPoint(new Point(-41.291320, 174.765450));
+    expected.addPoint(new Point(-41.291430, 174.765570));
+    expected.addPoint(new Point(-41.291790, 174.765600));
+    expected.addPoint(new Point(-41.291870, 174.765710));
   }
 
   @Test
