@@ -37,20 +37,42 @@ public class Frame {
       throw new IllegalArgumentException("Point " + point + " does not fit in the frame");
     }
 
-    this.points.add(point);
-    if (points.size() ==1)
+    if (points.isEmpty())
     {
       // first point
       minX = point.getX();
       maxX = point.getX();
       minY = point.getY();
       maxY = point.getY();
+    } else {
+      setCheckBoundaries(point);
+    }
+
+    this.points.add(point);
+
+  }
+
+  private void setCheckBoundaries(Point p) {
+    double x = p.getX();
+    double y = p.getY();
+
+    if (x < minX) {
+      minX = x;
+    }
+    if (x > maxX) {
+      maxX = x;
+    }
+    if (y < minY) {
+      minY = y;
+    }
+    if (y > maxY) {
+      maxY = y;
     }
   }
 
 
   public boolean isInFrame(Point point) {
-    if (points.isEmpty()) {
+    if (points.size() < 3) {
       return true;
     }
     return fitsHeight(point.getY()) && fitsWidth(point.getX());
@@ -64,12 +86,10 @@ public class Frame {
     }
 
     if (x < minX && maxX - x <= width) {
-      minX = x;
       return true;
     }
 
     if (x > maxX && x - minX <= width) {
-      maxX = x;
       return true;
     }
     return false;
@@ -82,12 +102,10 @@ public class Frame {
     }
 
     if (y < minY && maxY - y <= height) {
-      minY = y;
       return true;
     }
 
     if (y > maxY && y - minY <= height) {
-      maxY = y;
       return true;
     }
     return false;
@@ -106,5 +124,8 @@ public class Frame {
     return new Line(points);
   }
 
-
+  public Point[] getBounds() {
+    return new Point[] {new Point(minX, minY), new Point(maxX, maxY)};
+  }
+  
 }

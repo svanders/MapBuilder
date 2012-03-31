@@ -24,9 +24,12 @@ public class ImageFetcherTest {
 
   @Test
   public void checkContentType() throws Exception {
-    File file = File.createTempFile("test", ".png");
-    String contentType = fetcher.fetchImage(file, 51.477222, 0);
-    assertThat(contentType).isEqualTo("image/png");
+    Line line = new Line();
+    line.addPoint(new Point(174.765520, -41.290770));
+    line.addPoint(new Point(174.765560,-41.290940));
+    File file = File.createTempFile("test", ".jpg");
+    String contentType = fetcher.fetchImage(file, line);
+    assertThat(contentType).isEqualTo("image/jpeg");
   }
 
 

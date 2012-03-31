@@ -45,16 +45,17 @@ public class FrameTest {
   }
 
   @Test
-  public void secondPointInFrameBoundart() {
+  public void secondPointInFrameBoundary() {
     frame.addPoint(new Point(0.0, 0.0));
     assertThat(frame.isInFrame(new Point(WIDTH, HEIGHT))).isTrue();
   }
 
+
   @Test
-  public void secondPointNotInFrame() {
+  public void secondPointPastFrameBoundaryButStillIn() {
     frame.addPoint(new Point(0.0, 0.0));
-    assertThat(frame.isInFrame(new Point(1.0, 3.1))).isFalse();
-    assertThat(frame.isInFrame(new Point(2.0000001, 3.0))).isFalse();
+    assertThat(frame.isInFrame(new Point(1.0, 3.1))).isTrue();  // as second point always in frame
+    assertThat(frame.isInFrame(new Point(2.0000001, 3.0))).isTrue();
   }
 
   @Test
@@ -72,6 +73,7 @@ public class FrameTest {
   public void notInFrame() {
     frame.addPoint(new Point(-1.0, 1.5));
     frame.addPoint(new Point(1.0, -1.5));
+    frame.addPoint(new Point(0.1, -1.3));
 
     assertThat(frame.isInFrame(new Point(1.1, 0.0))).isFalse();
     assertThat(frame.isInFrame(new Point(-1.1, 0.0))).isFalse();
@@ -80,8 +82,8 @@ public class FrameTest {
     assertThat(frame.isInFrame(new Point(5.0, -100.0))).isFalse();
   }
   
-  @Test(expected = IllegalArgumentException.class)
-  public void addSecondPointOutOfFrame() {
+  @Test
+  public void addSecondPointOutOfBounds() {
     frame.addPoint(new Point(0.0, 0.0));
     frame.addPoint(new Point(WIDTH + 1.0, HEIGHT + 0.1));
   }
@@ -90,6 +92,7 @@ public class FrameTest {
   public void addPointOutOfFrame() {
     frame.addPoint(new Point(-1.0, 1.5));
     frame.addPoint(new Point(1.0, -1.5));
+    frame.addPoint(new Point(0.5, 0.5));
     frame.addPoint(new Point(5.0, 4.0));
   }
 }
