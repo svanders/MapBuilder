@@ -1,0 +1,23 @@
+<html>
+<head>
+  <style type="text/css">
+    .break {
+    page-break-before: always;
+    }
+  </style>
+
+</head>
+<body>
+<div>
+  <h1>East to West Traverse</h1>
+  <h2>$country</h2>
+</div>
+
+  #foreach( $map in $mapList )
+  <div style="page-break-before: always">
+    <img src="$map" alt="$map" />
+    <p>$map</p>
+  </div>
+  #end
+</body>
+</html>

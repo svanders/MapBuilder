@@ -34,7 +34,7 @@ public class MapProcessor {
     this.options = options;
   }
 
-  public void init() throws Exception {
+  public File init() throws Exception {
     File kmlFile = new File(options.getSource());
     File dir = kmlFile.getParentFile();
     targetDir = new File(dir, kmlFile.getName().replace(".kml", ""));
@@ -42,6 +42,7 @@ public class MapProcessor {
       targetDir.mkdir();
     }
     this.source = new KmlParser(new FileInputStream(kmlFile));
+    return targetDir;
   }
 
   public void run() {
