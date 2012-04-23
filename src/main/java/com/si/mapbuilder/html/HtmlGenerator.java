@@ -23,15 +23,16 @@ public class HtmlGenerator {
   private VelocityEngine velocityEngine;
 
 
-  public void generateHtml(File target) {
-    Assert.isTrue(target.isDirectory(), "HTML generation must be run over a directory");
+  public File generateHtml(File targetDir) {
+    Assert.isTrue(targetDir.isDirectory(), "HTML generation must be run over a directory");
     Map model = new HashMap();
-    model.put("country", target.getName());
-    model.put("mapList", readMapImageFileNames(target));
+    model.put("country", targetDir.getName());
+    model.put("mapList", readMapImageFileNames(targetDir));
     String html = VelocityEngineUtils.mergeTemplateIntoString(
         velocityEngine, "html/map.vm", model);
-    File htmlFile = createHtmlFile(target);
+    File htmlFile = createHtmlFile(targetDir);
     writeHtmlToFile(htmlFile, html);
+    return htmlFile;
   }
 
   private void writeHtmlToFile(File file, String html) {

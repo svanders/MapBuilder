@@ -23,7 +23,8 @@ public class Main {
       processor.run();
       System.out.println(processor.getFrames().size() + " frames generated from map");
       HtmlGenerator htmlGen = (HtmlGenerator) app.getBean(HtmlGenerator.class);
-      htmlGen.generateHtml(targetDir);
+      File htmlFile = htmlGen.generateHtml(targetDir);
+      System.out.println("Generated " + htmlFile.getName());
       System.exit(0);
     }
     catch (Exception e) {
